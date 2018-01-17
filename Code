@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int seed, multiplier, modulus, increment;
+
+int lcg(int seed)
+{
+    return  (multiplier * seed + increment) % 10;
+}
+
+int main(void)
+{
+    printf("Enter a multiplier:\n");
+    scanf("%d\n", &multiplier);
+
+    printf("Enter a seed:\n");
+    scanf("%d\n", &seed);
+
+    printf("Enter an incrementer:\n");
+    scanf("%d\n", &increment);
+
+
+
+
+
+    int i;
+    for (i = 0; i < 100; i++)
+    {
+        printf("%d ", seed);
+
+        seed = lcg(seed);
+    }
+
+
+    printf("\n\n\t\tNumber of Times Occuring:\n");
+    printf("----------------------------------------------------\n");
+
+    return 0;
+}
